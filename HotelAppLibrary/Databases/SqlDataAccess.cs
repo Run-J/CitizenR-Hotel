@@ -12,7 +12,7 @@ using Microsoft.Extensions.Configuration;
 namespace HotelAppLibrary.Databases
 {
     /// <summary>
-    /// Provides a data access layer for executing SQL queries or stored procedures.
+    /// Talk with Database. Provides a data access layer for executing SQL queries or stored procedures.
     /// Uses Dapper for object-relational mapping (ORM).
     /// </summary>
     public class SqlDataAccess : ISqlDataAccess

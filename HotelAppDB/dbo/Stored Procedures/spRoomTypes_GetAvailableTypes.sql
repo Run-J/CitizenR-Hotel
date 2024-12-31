@@ -1,4 +1,5 @@
-﻿-- Stored Procedure: spRoomTypes_GetAvailableTypes
+﻿-- ====================================================================================
+-- Stored Procedure: spRoomTypes_GetAvailableTypes
 -- 
 -- Purpose:
 --	 Retrieves a list of available room types that are not booked within a specified date range.
