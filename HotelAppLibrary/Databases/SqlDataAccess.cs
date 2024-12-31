@@ -19,7 +19,7 @@ namespace HotelAppLibrary.Databases
     {
         // Stores configuration settings, including connection strings.
         private readonly IConfiguration _config;
-
+        
 
         /// <summary>
         /// Initializes a new instance of SqlDataAccess with dependency injection for configuration.
