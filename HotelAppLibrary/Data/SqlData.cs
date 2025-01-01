@@ -81,5 +81,21 @@ namespace HotelAppLibrary.Data
                          connectionStringName,
                          true);
         }
+
+        /// <summary>
+        /// Retrieves booking details for a specific guest's last name on the current date.
+        /// </summary>
+        /// <param name="lastName">The last name of the guest whose bookings are being searched.</param>
+        /// <returns>
+        /// A list of <see cref="BookingFullModel"/> containing detailed booking information,
+        /// including guest, room, and room type details.
+        /// </returns>
+        public List<BookingFullModel> SearchBookings(string lastName)
+        {
+            return _db.LoadData<BookingFullModel, dynamic>("dbo.spBookings_Search",
+                                                    new { lastName, startDate = DateTime.Now.Date},
+                                                    connectionStringName,
+                                                    true);
+        }
     }
 }
