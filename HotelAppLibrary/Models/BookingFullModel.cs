@@ -15,7 +15,7 @@ namespace HotelAppLibrary.Models
         public int GuestId { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        public bool CheckedInd { get; set; }
+        public bool CheckedIn { get; set; }
         public decimal TotalCost { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

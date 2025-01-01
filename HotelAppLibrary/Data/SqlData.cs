@@ -12,7 +12,7 @@ namespace HotelAppLibrary.Data
     /// Talk with UI. Provides data access and business logic methods for hotel operations, including
     /// room availability checks and guest bookings etc.
     /// </summary>
-    public class SqlData
+    public class SqlData : IDatabaseData
     {
         private readonly ISqlDataAccess _db;
         private const string connectionStringName = "SqlDb";
@@ -58,7 +58,7 @@ namespace HotelAppLibrary.Data
                                                                  true).First();
 
             RoomTypeModel roomType = _db.LoadData<RoomTypeModel, dynamic>("select * from dbo.RoomTypes where Id = @Id",
-                                                                          new {Id = roomTypeId},
+                                                                          new { Id = roomTypeId },
                                                                           connectionStringName,
                                                                           false).First();
 
@@ -70,9 +70,9 @@ namespace HotelAppLibrary.Data
                                                                               true);
 
             _db.SaveData("dbo.spBookings_Insert",
-                         new 
-                         { 
-                             roomId = availableRooms.First().Id, 
+                         new
+                         {
+                             roomId = availableRooms.First().Id,
                              guestId = guest.Id,
                              startDate = startDate,
                              endDate = endDate,
@@ -93,9 +93,22 @@ namespace HotelAppLibrary.Data
         public List<BookingFullModel> SearchBookings(string lastName)
         {
             return _db.LoadData<BookingFullModel, dynamic>("dbo.spBookings_Search",
-                                                    new { lastName, startDate = DateTime.Now.Date},
+                                                    new { lastName, startDate = DateTime.Now.Date },
                                                     connectionStringName,
                                                     true);
+        }
+
+        /// <summary>
+        /// Marks a specific booking as "Checked In" in the database.
+        /// </summary>
+        /// <param name="bookingId">The unique identifier of the booking to check in.</param>
+        public void CheckInGuest(int bookingId)
+        {
+            // Execute the stored procedure to mark booking as checked in
+            _db.SaveData("dbo.spBookings_CheckIn",
+                         new { Id = bookingId },
+                         connectionStringName,
+                         true);
         }
     }
 }
