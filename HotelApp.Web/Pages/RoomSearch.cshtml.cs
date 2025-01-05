@@ -8,24 +8,36 @@ namespace HotelApp.Web.Pages
 {
     public class RoomSearchModel : PageModel
     {
-        private readonly IDatabaseData _db;
+        private readonly IDatabaseData _db; // Database access dependency
 
         [DataType(DataType.Date)]
         [BindProperty(SupportsGet = true)]
-        public DateTime StartDate { get; set; } = DateTime.Now;
+        public DateTime StartDate { get; set; } = DateTime.Now; // Default end date is tomorrow
 
         [DataType(DataType.Date)]
         [BindProperty(SupportsGet = true)]
-        public DateTime EndDate { get; set; } = DateTime.Now.AddDays(1);
+        public DateTime EndDate { get; set; } = DateTime.Now.AddDays(1); // Default end date is tomorrow
 
         [BindProperty(SupportsGet = true)]
-        public bool SearchEnabled { get; set; } = false;
+        public bool SearchEnabled { get; set; } = false; // Toggle for search functionality
 
-        public List<RoomTypeModel> AvailableRoomTypes { get; set; } = new List<RoomTypeModel>();
+        public List<RoomTypeModel> AvailableRoomTypes { get; set; } = new List<RoomTypeModel>(); // For stores search results
 
         public RoomSearchModel(IDatabaseData db)
         {
             _db = db;
+        }
+
+
+        public IActionResult OnPost() 
+        {
+            return RedirectToPage // Handles POST requests and redirects to the same page with query parameters.
+
+            (new 
+                {SearchEnabled = true, 
+                StartDate = StartDate.ToString("yyyy-MM-dd"), 
+                EndDate = EndDate.ToString("yyyy-MM-dd")}
+            );
         }
 
         public void OnGet()
@@ -34,16 +46,6 @@ namespace HotelApp.Web.Pages
             {
                 AvailableRoomTypes = _db.GetAvailableRoomTypes(StartDate, EndDate);
             }
-        }
-
-        public IActionResult OnPost()
-        {
-            return RedirectToPage
-            (new 
-                {SearchEnabled = true, 
-                StartDate = StartDate.ToString("yyyy-MM-dd"), 
-                EndDate = EndDate.ToString("yyyy-MM-dd")}
-            );
         }
     }
 }

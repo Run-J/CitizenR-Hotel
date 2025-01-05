@@ -110,5 +110,21 @@ namespace HotelAppLibrary.Data
                          connectionStringName,
                          true);
         }
+
+        /// <summary>
+        /// Retrieves a single room type by its unique identifier from the database.
+        /// </summary>
+        /// <param name="id">The unique identifier of the room type to retrieve.</param>
+        /// <returns>
+        /// A <see cref="RoomTypeModel"/> object representing the room type if found; 
+        /// otherwise, <c>null</c> if no matching room type exists.
+        /// </returns>
+        public RoomTypeModel? GetRoomTypeById(int id)
+        {
+            return _db.LoadData<RoomTypeModel, dynamic>("dbo.spRoomTypes_GetById", 
+                                                        new { id },
+                                                        connectionStringName,
+                                                        true).FirstOrDefault();
+        }
     }
 }
