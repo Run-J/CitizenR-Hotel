@@ -1,4 +1,5 @@
 ﻿using HotelAppLibrary.Data;
+using HotelAppLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,9 +22,19 @@ namespace HotelApp.Desktop
     /// </summary>
     public partial class MainWindow : Window
     {
+        public IDatabaseData _db;
+
         public MainWindow(IDatabaseData db)
         {
             InitializeComponent();
+            _db = db;
         }
+
+        public void searchForGuest_Click(object sender, RoutedEventArgs e)
+        {
+            List<BookingFullModel> bookings = _db.SearchBookings(lastNameText.Text);
+            resultsList.ItemsSource = bookings;
+        }
+
     }
 }

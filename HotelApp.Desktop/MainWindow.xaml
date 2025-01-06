@@ -4,9 +4,80 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HotelApp.Desktop"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        mc:Ignorable="d" 
+        Title="MainWindow" Height="450" Width="800" FontSize="20" FontFamily="Segoe UI">
+    
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Search for Guest" FontSize="28"/>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0">
+            <TextBox x:Name="lastNameText" MinWidth="200" Margin="5"/>
+            <Button x:Name="searchForGuest" Margin="5" Padding="5" 
+                    Click="searchForGuest_Click">
+                Search
+            </Button>
+        </StackPanel>
+
+        <ListBox x:Name="resultsList" Grid.Row="2" Grid.Column="0" 
+                 Margin="5 20 5 5" ItemsSource="{Binding}" MaxHeight="300"
+                 ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <!--Defines the visual structure for each item (List<BookingFullModel>).-->
+            <ListBox.ItemTemplate>
+                <!--customizes how each item appears.-->
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Orientation="Horizontal" Grid.Row="0">
+                            <TextBlock FontWeight="Bold" Margin="5">Reservation:</TextBlock>
+                            <TextBlock Text="{Binding FirstName}" Margin="5" />
+                            <TextBlock Text="{Binding LastName}" Margin="5" />
+                        </StackPanel>
+
+                        <Button Margin="5" Padding="10" Grid.Row="0" Grid.Column="1" 
+                                Grid.RowSpan="4" VerticalAlignment="Center">
+                            Check In
+                        </Button>
+
+                        <StackPanel Orientation="Horizontal" Grid.Row="1">
+                            <TextBlock FontWeight="Bold" Margin="5">Room:</TextBlock>
+                            <TextBlock Text="{Binding Title}" Margin="5" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Grid.Row="2">
+                            <TextBlock FontWeight="Bold" Margin="5">Room Number:</TextBlock>
+                            <TextBlock Text="{Binding RoomNumber}" Margin="5" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Grid.Row="3">
+                            <TextBlock FontWeight="Bold" Margin="5">Total Cost:</TextBlock>
+                            <TextBlock Text="{Binding TotalCost, StringFormat='c'}" Margin="5" />
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        
     </Grid>
+    
 </Window>
