@@ -39,17 +39,20 @@ namespace HotelApp.Desktop
 
 
         /// <summary>
-        /// Handles the search button click event to find guest bookings by last name.
+        /// Handles the search button click event to find guest bookings that are still not checked in yet by last name.
         /// </summary>
         /// <param name="sender">Event sender.</param>
         /// <param name="e">Event arguments.</param>
         public void SearchForGuest_Click(object sender, RoutedEventArgs e)
         {
-            // Fetch bookings matching the guest's last name.
+            // Fetch all bookings from the database
             List<BookingFullModel> bookings = _db.SearchBookings(lastNameText.Text);
 
-            // Display the search results in the ListBox.
-            resultsList.ItemsSource = bookings;
+            // Filter bookings to show only those not checked in
+            var uncheckedInBookings = bookings.Where(b => !b.CheckedIn).ToList();
+
+            // Display filtered bookings in the ListBox
+            resultsList.ItemsSource = uncheckedInBookings;
         }
 
 
