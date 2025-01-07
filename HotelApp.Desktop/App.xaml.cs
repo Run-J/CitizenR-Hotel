@@ -20,6 +20,9 @@ namespace HotelApp.Desktop
     /// </summary>
     public partial class App : Application
     {
+        public static ServiceProvider? serviceProvider { get; private set; }
+
+
         /// <summary>
         /// Overrides the startup behavior of the application.
         /// </summary>
@@ -33,6 +36,7 @@ namespace HotelApp.Desktop
 
             // Register services (Dependency Injection)
             services.AddTransient<MainWindow>(); // Lifetimes of Transient: A new instance every time it’s requested.	
+            services.AddTransient<CheckInForm>();
             services.AddTransient<ISqlDataAccess, SqlDataAccess>();
             services.AddTransient<IDatabaseData, SqlData>();
 
@@ -53,7 +57,7 @@ namespace HotelApp.Desktop
 
             // Service Provider
             // Build the service provider
-            var serviceProvider = services.BuildServiceProvider();
+            serviceProvider = services.BuildServiceProvider();
 
             // Resolve MainWindow from the service provider;
             // Ensures that all dependencies of MainWindow (like database connections or services)
