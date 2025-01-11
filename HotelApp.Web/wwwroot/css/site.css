@@ -129,3 +129,126 @@ footer p {
     background-color: #005f73; /* Darker teal on hover */
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
+
+
+
+
+.btn-success {
+    background-color: #52b788; /* Green for success */
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: #40916c;
+    transform: translateY(-2px);
+}
+
+/* Room Search Page */
+.room-search-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.page-title {
+    text-align: center;
+    color: #005f73; /* Dark teal */
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #005f73;
+}
+
+.form-control {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.results-title {
+    text-align: center;
+    color: #005f73;
+    margin-top: 20px;
+    font-size: 1.8rem;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table th,
+.table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #0a9396;
+    color: white;
+    font-weight: bold;
+}
+
+.table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Room Details Styling */
+.room-details {
+    padding: 10px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.room-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #005f73; /* Dark teal for the title */
+    margin-bottom: 5px;
+}
+
+.room-description {
+    font-size: 1rem;
+    color: #555; /* Slightly lighter text for the description */
+    line-height: 1.5;
+}
+
+
+.no-results-message {
+    text-align: center;
+    color: #d9534f; /* Red for emphasis */
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.text-error {
+    color: #d9534f;
+    padding-top: 5px;
+}

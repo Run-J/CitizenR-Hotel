@@ -31,8 +31,8 @@ namespace HotelApp.Web.Pages
 
         public IActionResult OnPost() 
         {
-            return RedirectToPage // Handles POST requests and redirects to the same page with query parameters.
-
+            // Handles POST requests and redirects to the same page with query parameters.
+            return RedirectToPage 
             (new 
                 {SearchEnabled = true, 
                 StartDate = StartDate.ToString("yyyy-MM-dd"), 

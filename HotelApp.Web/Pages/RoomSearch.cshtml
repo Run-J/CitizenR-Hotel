@@ -5,47 +5,98 @@
     Layout = "_CustomLayout";
 }
 
-<h1>Room Search</h1>
+<div class="room-search-container">
+    <h1 class="page-title">Room Search</h1>
 
-<form method="post">
-    <div class="form-group">
-        <label asp-for="@Model.StartDate"></label>
-        <input asp-for="@Model.StartDate" />
-    </div>
-    <div class="form-group">
-        <label asp-for="@Model.EndDate"></label>
-        <input asp-for="@Model.EndDate" />
-    </div>
-    <button type="submit" class="btn btn-primary">Search</button>
-</form>
+    <form method="post" class="search-form" onsubmit="return validateDates()">
+        <div class="form-group">
+            <label asp-for="StartDate" class="form-label"></label>
+            <input asp-for="StartDate" class="form-control" id="startDate" />
+            <span id="startDateError" class="text-error"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="EndDate" class="form-label"></label>
+            <input asp-for="EndDate" class="form-control" id="endDate" />
+            <span id="endDateError" class="text-error"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
 
-@if (Model.AvailableRoomTypes?.Count > 0) // If there is room available now
-{
-    <br />
-    <h2>Results</h2>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Room Type</th>
-                <th>Price</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var room in Model.AvailableRoomTypes)
-            {
-                <tr>
-                    <td>
-                        <strong>@room.Title</strong><br />
-                        @room.Description
-                    </td>
-                    <td>@string.Format("{0:C}", room.Price)</td>
-                    <td><a asp-page="/BookRoom" asp-route-roomtypeid="@room.Id" 
-                        asp-route-startdate="@Model.StartDate.ToShortDateString()"
-                           asp-route-enddate="@Model.EndDate.ToShortDateString()">Book Now</a>
-                    </td>
-                </tr>
+    @if (Model.SearchEnabled)
+    {
+        @if (Model.AvailableRoomTypes?.Count > 0)
+        {
+            <br />
+            <h2 class="results-title">Available Rooms</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Room Type</th>
+                        <th>Price (per night)</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var room in Model.AvailableRoomTypes)
+                    {
+                        <tr>
+                            <td class="room-details">
+                                <div class="room-title">@room.Title</div>
+                                <div class="room-description">@room.Description</div>
+                            </td>
+                            <td>@string.Format("{0:C}", room.Price)</td>
+                            <td>
+                                <a asp-page="/BookRoom"
+                                   asp-route-roomtypeid="@room.Id"
+                                   asp-route-startdate="@Model.StartDate.ToShortDateString()"
+                                   asp-route-enddate="@Model.EndDate.ToShortDateString()"
+                                   class="btn btn-success">Book Now</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p class="no-results-message">Sorry, no rooms are available for the selected dates.</p>
+        }
+    }
+
+</div>
+
+<!-- JavaScript for Validation -->
+<script>
+    function validateDates() {
+        const startDateInput = document.getElementById("startDate");
+        const endDateInput = document.getElementById("endDate");
+        const startDateError = document.getElementById("startDateError");
+        const endDateError = document.getElementById("endDateError");
+
+        const startDate = new Date(startDateInput.value);
+        const endDate = new Date(endDateInput.value);
+
+        // Reset error messages
+        startDateError.textContent = "";
+        endDateError.textContent = "";
+
+        // Validation logic
+        if (!startDateInput.value || !endDateInput.value) {
+            if (!startDateInput.value) {
+                startDateError.textContent = "Start Date cannot be blank.";
             }
-        </tbody>
-    </table>
-}
+            if (!endDateInput.value) {
+                endDateError.textContent = "End Date cannot be blank.";
+            }
+            return false;
+        }
+
+        if (startDate >= endDate) {
+            startDateError.textContent = "Start Date must be earlier than End Date.";
+            return false;
+        }
+
+        // Validation passed
+        return true;
+    }
+</script>
