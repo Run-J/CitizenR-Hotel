@@ -5,23 +5,26 @@
     Layout = "_CustomLayout";
 }
 
-<h1>Book Room Summary</h1>
+<div class="book-room-container">
+    <h1 class="page-title">Book Room Summary</h1>
 
-<h2>@Model.RoomType?.Title</h2>
-<p>@Model.RoomType?.Description</p>
-
-<p><strong>Start Date:</strong> @Model.StartDate.ToShortDateString()</p>
-<p><strong>End Date:</strong> @Model.EndDate.ToShortDateString()</p>
-<p><strong>Total Cost:</strong> @string.Format("{0:C}", Model.TotalCost)</p> <!-- Display Total Cost -->
-
-<form method="post">
-    <div class="form-group">
-        <label asp-for="@Model.FirstName"></label>
-        <input asp-for="@Model.FirstName" class="form-control" />
+    <div class="room-details-card">
+        <h2 class="room-title">@Model.RoomType?.Title</h2>
+        <p class="room-description">@Model.RoomType?.Description</p>
+        <p><strong>Start Date:</strong> @Model.StartDate.ToShortDateString()</p>
+        <p><strong>End Date:</strong> @Model.EndDate.ToShortDateString()</p>
+        <p><strong>Total Cost:</strong> @string.Format("{0:C}", Model.TotalCost)</p>
     </div>
-    <div class="form-group">
-        <label asp-for="@Model.LastName"></label>
-        <input asp-for="@Model.LastName" class="form-control" />
-    </div>
-    <button type="submit" class="btn btn-primary">Book</button>
-</form>
+
+    <form method="post" class="booking-form">
+        <div class="form-group">
+            <label asp-for="@Model.FirstName" class="form-label">First Name</label>
+            <input asp-for="@Model.FirstName" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.LastName" class="form-label">Last Name</label>
+            <input asp-for="@Model.LastName" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary btn-submit">Book</button>
+    </form>
+</div>
