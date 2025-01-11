@@ -1,0 +1,20 @@
+﻿@page
+@model HotelApp.Web.Pages.BookingConfirmationModel
+@{
+    ViewData["Title"] = "Booking Confirmation";
+    Layout = "_CustomLayout";
+}
+
+<div class="confirmation-container">
+    <h1 class="page-title">Booking Confirmation</h1>
+
+    <div class="confirmation-card">
+        <p>Thank you, <strong>@Model.FirstName @Model.LastName</strong>, for your booking!</p>
+        <p><strong>Room Type:</strong> @Model.RoomType?.Title</p>
+        <p><strong>Start Date:</strong> @Model.StartDate.ToShortDateString()</p>
+        <p><strong>End Date:</strong> @Model.EndDate.ToShortDateString()</p>
+        <p><strong>Total Cost:</strong> @string.Format("{0:C}", Model.TotalCost)</p>
+    </div>
+
+    <a href="/" class="btn btn-primary">Return to Home</a>
+</div>

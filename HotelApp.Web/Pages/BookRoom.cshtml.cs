@@ -47,8 +47,19 @@ namespace HotelApp.Web.Pages
 
         public IActionResult OnPost()
         {
-            _db.BookGuest(FirstName, LastName, StartDate, EndDate, RoomTypeId); // Write Guest booking info into database
-            return RedirectToPage("/Index");
+            // Write Guest booking info into the database
+            _db.BookGuest(FirstName, LastName, StartDate, EndDate, RoomTypeId);
+
+            // Redirect to the Booking Confirmation page
+            return RedirectToPage("/BookingConfirmation", new
+            {
+                FirstName = FirstName,
+                LastName = LastName,
+                RoomTypeId = RoomTypeId,
+                StartDate = StartDate.ToString("yyyy-MM-dd"),
+                EndDate = EndDate.ToString("yyyy-MM-dd")
+            });
         }
+
     }
 }
