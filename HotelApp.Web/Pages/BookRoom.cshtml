@@ -2,13 +2,14 @@
 @model HotelApp.Web.Pages.BookRoomModel
 @{
     ViewData["Title"] = "Book Room";
+    Layout = "_CustomLayout";
 }
 
 <h1>Book A Room</h1>
 
-<h2>@Model.RoomType?.Title ?? "Room type information is not available."</h2>
+<h2>@Model.RoomType?.Title</h2>
 <p>
-    @Model.RoomType?.Description ?? "Room type information is not available."
+    @Model.RoomType?.Description
 </p>
 <form method="post">
     <div class="form-group">

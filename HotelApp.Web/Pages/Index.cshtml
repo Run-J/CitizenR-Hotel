@@ -1,10 +1,17 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Welcome";
+    Layout = "_CustomLayout";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="welcome-container">
+    <div class="welcome-card">
+        <h1>Welcome to G Hotel</h1>
+        <p>
+            Experience unparalleled comfort and luxury during your stay. Explore our world-class
+            amenities and beautifully designed rooms tailored to your needs.
+        </p>
+        <a class="btn btn-primary" href="/RoomSearch">View Rooms</a>
+    </div>
 </div>

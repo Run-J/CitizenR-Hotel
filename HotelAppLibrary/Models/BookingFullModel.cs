@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
-
 namespace HotelAppLibrary.Models
 {
     public class BookingFullModel
@@ -17,12 +15,12 @@ namespace HotelAppLibrary.Models
         public DateTime EndDate { get; set; }
         public bool CheckedIn { get; set; }
         public decimal TotalCost { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public string? FirstName { get; set; }
+        public string? LastName { get; set; }
         public int RoomNumber { get; set; }
         public int RoomTypeId { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
+        public string? Title { get; set; }
+        public string? Description { get; set; }
         public decimal Price { get; set; }
     }
 }

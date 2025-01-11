@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - G Hotel</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+    <header>
+        <nav class="navi">
+            <a href="/">Welcome</a>
+            <a href="">Contact</a>
+        </nav>
+        <div class="hero">
+            <img src="~/images/heroImage.jpg" alt="Hero Image">
+        </div>
+    </header>
+
+    <main class="main">
+        @RenderBody()
+    </main>
+
+    <footer>
+        <p>&copy; 2025 G Hotel. All rights reserved.</p>
+    </footer>
+</body>
+</html>
