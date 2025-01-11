@@ -18,12 +18,17 @@ namespace HotelApp.Web.Pages
         [BindProperty(SupportsGet = true)]
         public DateTime EndDate { get; set; }
 
+        // Dynamically calculate the total cost
+        public decimal TotalCost =>
+            RoomType != null
+                ? RoomType.Price * (decimal)(EndDate - StartDate).TotalDays
+                : 0;
+
         [BindProperty]
         public string FirstName { get; set; } = string.Empty;
 
         [BindProperty]
         public string LastName { get; set; } = string.Empty;
-
 
         public RoomTypeModel? RoomType { get; set; }
 

@@ -26,10 +26,9 @@ namespace HotelAppLibrary.Data
             _db = db;
         }
 
-        /// <summary>
+        /// <summary>======
         /// Retrieves a list of available room types for a specified date range.
-        /// </summary>
-        /// <param name="startDate">The start date of the requested booking period.</param>
+        /// </summary>        /// <param name="startDate">The start date of the requested booking period.</param>
         /// <param name="endDate">The end date of the requested booking period.</param>
         /// <returns>
         /// A list of <see cref="RoomTypeModel"/> representing the available room types.
