@@ -4,7 +4,7 @@ AS
 begin
 	set nocount on
 
-	select [Id], [Title], [Description], [Price] 
+	select [Id], [Title], [Description], [Price], [ImageUrl]
 	from dbo.RoomTypes
 	where Id = @id;
 

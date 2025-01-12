@@ -58,7 +58,7 @@ footer p {
     margin: 0;
 }
 
-/* Main Content */
+
 .main {
     width: 90%;
     max-width: 980px;
@@ -71,7 +71,7 @@ footer p {
     overflow: hidden;
 }
 
-/* Welcome Container */
+/* ------ Welcome Page (Index Page)  ------*/
 .welcome-container {
     display: flex;
     justify-content: center;
@@ -91,14 +91,12 @@ footer p {
     color: #333;
 }
 
-/* Heading */
 .welcome-card h1 {
     font-size: 2.5rem;
     color: #005f73; /* Dark teal color */
     margin-bottom: 20px;
 }
 
-/* Paragraph */
 .welcome-card p {
     font-size: 1.2rem;
     line-height: 1.5;
@@ -106,7 +104,6 @@ footer p {
     margin-bottom: 30px;
 }
 
-/* Call-to-Action Button */
 .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -128,17 +125,11 @@ footer p {
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
-.btn-success {
-    background-color: #52b788; /* Green for success */
-    color: white;
-}
 
-.btn-success:hover {
-    background-color: #40916c;
-    transform: translateY(-2px);
-}
 
-/* Room Search Page */
+
+
+/* ------ Room Search Page ------ */
 .room-search-container {
     max-width: 800px;
     margin: 40px auto;
@@ -216,7 +207,26 @@ footer p {
 }
 
 
-/* Room Details Styling */
+.btn-success {
+    background-color: #52b788; /* Green for success */
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: #40916c;
+    transform: translateY(-2px);
+}
+
+
+.room-image-search {
+    width: 150px;
+    height: 100px;
+    object-fit: cover; /* Ensures the image is cropped proportionally */
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+
 .room-details {
     padding: 10px;
     font-size: 1rem;
@@ -249,7 +259,7 @@ footer p {
 }
 
 
-/* Book Room Page Container */
+/* ------ Book Room Page (Summary Page) Container ------ */
 .book-room-container {
     max-width: 800px;
     margin: 40px auto;
@@ -259,9 +269,9 @@ footer p {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-family: Arial, sans-serif;
     color: #333;
+    text-align: center; /* Centers all text inside this container */
 }
 
-/* Room Details Card */
 .room-details-card {
     margin-bottom: 30px;
     padding: 20px;
@@ -269,6 +279,18 @@ footer p {
     border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centers the content within the card */
+}
+
+/* Room Image on Book Room Page */
+.room-image-summary {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: 20px auto; /* Centers the image */
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Room Title */
@@ -277,6 +299,7 @@ footer p {
     color: #005f73; /* Dark teal for titles */
     margin-bottom: 10px;
     font-weight: bold;
+    text-align: center; /* Explicitly center the title */
 }
 
 /* Room Description */
@@ -285,6 +308,7 @@ footer p {
     color: #555;
     margin-bottom: 15px;
     line-height: 1.5;
+    text-align: center; /* Explicitly center the description */
 }
 
 /* Booking Form */
@@ -292,6 +316,7 @@ footer p {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    text-align: center; /* Centers the form within its container */
 }
 
 .booking-form .form-group {
@@ -313,6 +338,8 @@ footer p {
     border-radius: 5px;
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
     transition: border-color 0.3s ease;
+    margin: 0 auto; /* Centers the input fields */
+    max-width: 400px; /* Optional: restrict the width of inputs */
 }
 
 .booking-form .form-control:focus {
@@ -324,7 +351,7 @@ footer p {
 /* Submit Button */
 .btn-submit {
     margin-top: 20px;
-    align-self: flex-start;
+    align-self: center; /* Centers the button */
     padding: 10px 20px;
     font-size: 1.1rem;
     font-weight: bold;
@@ -344,7 +371,11 @@ footer p {
 }
 
 
-/* Booking Confirmation Styles */
+
+
+
+
+/* ---------- Booking Confirmation Page ------------ */
 .confirmation-container {
     max-width: 800px;
     margin: 40px auto;

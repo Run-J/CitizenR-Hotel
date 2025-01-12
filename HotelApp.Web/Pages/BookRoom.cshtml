@@ -9,6 +9,7 @@
     <h1 class="page-title">Book Room Summary</h1>
 
     <div class="room-details-card">
+        <img src="@Model.RoomType?.ImageUrl" alt="@Model.RoomType?.Title" class="room-image-summary" />
         <h2 class="room-title">@Model.RoomType?.Title</h2>
         <p class="room-description">@Model.RoomType?.Description</p>
         <p><strong>Start Date:</strong> @Model.StartDate.ToShortDateString()</p>

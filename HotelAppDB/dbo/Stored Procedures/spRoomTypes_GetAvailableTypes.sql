@@ -20,7 +20,7 @@ AS
 begin
 	set nocount on;
 
-	select t.Id, t.Title, t.Description, t.Price
+	select t.Id, t.Title, t.Description, t.Price, t.ImageUrl
 	from dbo.Rooms r
 	inner join dbo.RoomTypes t on t.Id = r.RoomTypesId
 	where r.Id not in (
@@ -30,5 +30,5 @@ begin
 		or (@endDate >= b.StartDate and @endDate < b.EndDate)
 		or (@startDate >= b.StartDate and @startDate < b.EndDate)
 	)
-	group by t.Id, t.Title, t.Description, t.Price
+	group by t.Id, t.Title, t.Description, t.Price, t.ImageUrl
 end
