@@ -1,10 +1,13 @@
+/* General Styles */
 body {
     background: #d4f1f9; /* Light blue background inspired by the water */
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    color: #333; /* Ensures consistent text color */
 }
 
+/* Header Styles */
 header {
     width: 100%;
     background: rgba(255, 255, 255, 0.8); /* Semi-transparent white for a modern look */
@@ -12,7 +15,7 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds subtle shadow for depth */
 }
 
-/* Navi */
+/* Navigation Styles */
 nav {
     width: 100%;
     max-width: 1100px;
@@ -29,12 +32,13 @@ nav a {
     text-decoration: none;
     font-size: 1.2rem;
     color: #005f73; /* Dark teal inspired by water shadows */
+    font-weight: 500;
     transition: color 0.3s ease-in-out;
 }
 
 nav a:hover {
-    color: #0a9396; /* Brighter teal for hover effect */
-    font-weight: bold;
+    color: #0a9396;
+    font-weight: 600;
 }
 
 /* Hero Section */
@@ -45,17 +49,18 @@ nav a:hover {
     display: block;
 }
 
-/* Footer */
+
 footer {
     background: #005f73; /* Dark teal for contrast */
     color: #ffffff;
     padding: 20px 0;
     text-align: center;
-    font-weight: bold;
+    font-weight: 500; /* Medium weight for footer text */
 }
 
 footer p {
     margin: 0;
+    font-size: 1rem;
 }
 
 
@@ -81,19 +86,19 @@ footer p {
 }
 
 .welcome-card {
+    font-family: 'Poppins', sans-serif;
     text-align: center;
-    max-width: 600px;
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
     border-radius: 10px;
-    font-family: Arial, sans-serif;
-    color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: #f8f9fa;
+    font-size: 1.1rem;
 }
 
 .welcome-card h1 {
     font-size: 2.5rem;
-    color: #005f73; /* Dark teal color */
+    color: #005f73;
     margin-bottom: 20px;
 }
 
@@ -104,11 +109,13 @@ footer p {
     margin-bottom: 30px;
 }
 
+
 .btn {
+    font-family: 'Poppins', sans-serif; /* Ensure buttons use the same font */
     display: inline-block;
     padding: 10px 20px;
-    font-size: 1rem;
-    font-weight: bold;
+    font-size: 1.1rem;
+    font-weight: 600;
     color: #ffffff;
     text-decoration: none;
     border-radius: 5px;
@@ -116,12 +123,12 @@ footer p {
 }
 
 .btn-primary {
-    background-color: #0a9396; /* Bright teal for primary action */
+    background-color: #0a9396;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .btn-primary:hover {
-    background-color: #005f73; /* Darker teal on hover */
+    background-color: #005f73;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -139,10 +146,12 @@ footer p {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Page Title */
 .page-title {
+    font-size: 2.5rem;
+    color: #005f73;
+    font-weight: 600;
     text-align: center;
-    color: #005f73; /* Dark teal */
-    font-size: 2rem;
     margin-bottom: 20px;
 }
 
@@ -158,10 +167,10 @@ footer p {
     flex-direction: column;
 }
 
+/* Form Labels */
 .form-label {
-    font-size: 1rem;
-    font-weight: bold;
-    margin-bottom: 5px;
+    font-size: 1.1rem;
+    font-weight: 500;
     color: #005f73;
 }
 
@@ -189,11 +198,9 @@ footer p {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.table th,
-.table td {
-    padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+.table th, .table td {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem; /* Standard size for tables */
 }
 
 .table th {
@@ -273,13 +280,14 @@ footer p {
 }
 
 .room-details-card {
-    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
     padding: 20px;
-    background-color: #f8f9fa; /* Light gray background for contrast */
-    border: 1px solid #ddd;
+    margin: 20px auto;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Centers the content within the card */
+    background: #f8f9fa;
+    font-size: 1.1rem;
 }
 
 /* Room Image on Book Room Page */
@@ -388,12 +396,14 @@ footer p {
 }
 
 .confirmation-card {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
     padding: 20px;
-    background-color: #f8f9fa; /* Light gray for contrast */
+    margin: 20px auto;
     border-radius: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: #f8f9fa;
+    font-size: 1.1rem;
 }
 
 .confirmation-card p {

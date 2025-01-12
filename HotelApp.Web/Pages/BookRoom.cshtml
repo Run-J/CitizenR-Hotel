@@ -17,15 +17,53 @@
         <p><strong>Total Cost:</strong> @string.Format("{0:C}", Model.TotalCost)</p>
     </div>
 
-    <form method="post" class="booking-form">
+    <form method="post" class="booking-form" onsubmit="return validateNameFields()">
         <div class="form-group">
             <label asp-for="@Model.FirstName" class="form-label">First Name</label>
-            <input asp-for="@Model.FirstName" class="form-control" />
+            <input asp-for="@Model.FirstName" class="form-control" id="firstName" />
+            <span id="firstNameError" class="text-error"></span>
         </div>
         <div class="form-group">
             <label asp-for="@Model.LastName" class="form-label">Last Name</label>
-            <input asp-for="@Model.LastName" class="form-control" />
+            <input asp-for="@Model.LastName" class="form-control" id="lastName" />
+            <span id="lastNameError" class="text-error"></span>
         </div>
         <button type="submit" class="btn btn-primary btn-submit">Book</button>
     </form>
 </div>
+
+
+<!-- JavaScript for Validation -->
+<script>
+    function validateNameFields() {
+        const firstNameInput = document.getElementById("firstName");
+        const lastNameInput = document.getElementById("lastName");
+        const firstNameError = document.getElementById("firstNameError");
+        const lastNameError = document.getElementById("lastNameError");
+
+        let isValid = true;
+
+        // Reset error messages
+        firstNameError.textContent = "";
+        lastNameError.textContent = "";
+
+        // Trim input values to check for spaces
+        const firstName = firstNameInput.value.trim();
+        const lastName = lastNameInput.value.trim();
+
+        // Validate First Name
+        if (firstName === "") {
+            firstNameError.textContent = "First Name cannot be blank or only spaces.";
+            isValid = false;
+        }
+
+        // Validate Last Name
+        if (lastName === "") {
+            lastNameError.textContent = "Last Name cannot be blank or only spaces.";
+            isValid = false;
+        }
+
+        // Return the validation result
+        return isValid;
+    }
+</script>
