@@ -6,13 +6,13 @@
 }
 
 <div class="confirmation-container">
-    <h1 class="page-title">Booking Confirmation</h1>
+    <h1 class="page-title">Successful Reservation</h1>
 
     <div class="confirmation-card">
         <p>Thank you, <strong>@Model.FirstName @Model.LastName</strong>, for your booking!</p>
         <p><strong>Room Type:</strong> @Model.RoomType?.Title</p>
-        <p><strong>Start Date:</strong> @Model.StartDate.ToShortDateString()</p>
-        <p><strong>End Date:</strong> @Model.EndDate.ToShortDateString()</p>
+        <p><strong>Check-in Date:</strong> @Model.StartDate.ToShortDateString()</p>
+        <p><strong>Check-out Date:</strong> @Model.EndDate.ToShortDateString()</p>
         <p><strong>Total Cost:</strong> @string.Format("{0:C}", Model.TotalCost)</p>
     </div>
 

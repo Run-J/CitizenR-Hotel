@@ -10,12 +10,12 @@
 
     <form method="post" class="search-form" onsubmit="return validateDates()">
         <div class="form-group">
-            <label asp-for="StartDate" class="form-label"></label>
+            <label asp-for="StartDate" class="form-label">Check-in</label>
             <input asp-for="StartDate" class="form-control" id="startDate" />
             <span id="startDateError" class="text-error"></span>
         </div>
         <div class="form-group">
-            <label asp-for="EndDate" class="form-label"></label>
+            <label asp-for="EndDate" class="form-label">Check-out</label>
             <input asp-for="EndDate" class="form-control" id="endDate" />
             <span id="endDateError" class="text-error"></span>
         </div>

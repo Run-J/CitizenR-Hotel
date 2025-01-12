@@ -12,8 +12,8 @@
         <img src="@Model.RoomType?.ImageUrl" alt="@Model.RoomType?.Title" class="room-image-summary" />
         <h2 class="room-title">@Model.RoomType?.Title</h2>
         <p class="room-description">@Model.RoomType?.Description</p>
-        <p><strong>Start Date:</strong> @Model.StartDate.ToShortDateString()</p>
-        <p><strong>End Date:</strong> @Model.EndDate.ToShortDateString()</p>
+        <p><strong>Check-in Date:</strong> @Model.StartDate.ToShortDateString()</p>
+        <p><strong>Check-out Date:</strong> @Model.EndDate.ToShortDateString()</p>
         <p><strong>Total Cost:</strong> @string.Format("{0:C}", Model.TotalCost)</p>
     </div>
 
