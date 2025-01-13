@@ -1,18 +1,7 @@
 ﻿using HotelAppLibrary.Data;
 using HotelAppLibrary.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace HotelApp.Desktop
 {
@@ -21,10 +10,8 @@ namespace HotelApp.Desktop
     /// </summary>
     public partial class CheckInForm : Window
     {
-
         private readonly IDatabaseData _db;
         private BookingFullModel? data = null;
-
 
         /// <summary>
         /// Initializes the Check-In form with database access.
@@ -35,7 +22,6 @@ namespace HotelApp.Desktop
             InitializeComponent();
             _db = db;
         }
-
 
         /// <summary>
         /// Populates the UI with booking details.
@@ -49,8 +35,10 @@ namespace HotelApp.Desktop
             titleText.Text = this.data.Title;
             roomNumberText.Text = this.data.RoomNumber.ToString();
             totalCostText.Text = String.Format("{0:c}", this.data.TotalCost);
-        }
 
+            // Format the check-out date to display only the date part
+            checkOutDateText.Text = this.data.EndDate.ToString("yyyy-MM-dd");
+        }
 
         /// <summary>
         /// Handles the Check-In button click event.
@@ -70,5 +58,4 @@ namespace HotelApp.Desktop
             this.Close();
         }
     }
-
 }

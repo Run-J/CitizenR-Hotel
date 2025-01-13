@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HotelApp.Desktop"
         mc:Ignorable="d"
-        Title="CheckInForm" Height="300" Width="500" FontSize="20" FontFamily="Segoe UI" WindowStartupLocation="CenterOwner">
+        Title="CheckInForm" Height="350" Width="500" FontSize="20" FontFamily="Segoe UI" WindowStartupLocation="CenterOwner">
     <Grid>
+        <!-- Background image -->
+        <Grid.Background>
+            <ImageBrush ImageSource="Assets/background.jpg" Stretch="UniformToFill" />
+        </Grid.Background>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
@@ -16,31 +21,40 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto" />
-            <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <StackPanel Orientation="Horizontal" Grid.Row="0">
-            <TextBlock FontWeight="Bold" Margin="5">Reservation:</TextBlock>
-            <TextBlock x:Name="firstNameText" Margin="5" />
-            <TextBlock x:Name="lastNameText" Margin="5" />
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Row="1">
-            <TextBlock FontWeight="Bold" Margin="5">Room:</TextBlock>
-            <TextBlock x:Name="titleText" Margin="5" />
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Row="2">
-            <TextBlock FontWeight="Bold" Margin="5">Room Number:</TextBlock>
-            <TextBlock x:Name="roomNumberText" Margin="5" />
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Row="3">
-            <TextBlock FontWeight="Bold" Margin="5">Total Cost:</TextBlock>
-            <TextBlock x:Name="totalCostText" Margin="5" />
-        </StackPanel>
-        <Button Margin="10" Padding="20 10" Grid.Row="4"
-                x:Name="CheckInUser" Click="CheckInUser_Click">
-            Confirm Check-In
-        </Button>
+        <!-- Reservation Information -->
+        <Border Background="White" BorderBrush="DarkSlateGray" BorderThickness="1" CornerRadius="10" Margin="10" Padding="10" Grid.Row="0">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Reservation: " FontWeight="Bold" Margin="0,0,5,0" Foreground="DarkSlateGray" />
+                    <TextBlock x:Name="firstNameText" Margin="0,0,5,0" />
+                    <TextBlock x:Name="lastNameText" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,5">
+                    <TextBlock Text="Check-out Date: " FontWeight="Bold" Margin="0,0,5,0" Foreground="DarkSlateGray" />
+                    <TextBlock x:Name="checkOutDateText" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,5">
+                    <TextBlock Text="Room: " FontWeight="Bold" Margin="0,0,5,0" Foreground="DarkSlateGray" />
+                    <TextBlock x:Name="titleText" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,5">
+                    <TextBlock Text="Room Number: " FontWeight="Bold" Margin="0,0,5,0" Foreground="DarkSlateGray" />
+                    <TextBlock x:Name="roomNumberText" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,5">
+                    <TextBlock Text="Total Cost: " FontWeight="Bold" Margin="0,0,5,0" Foreground="DarkSlateGray" />
+                    <TextBlock x:Name="totalCostText" />
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+        <!-- Confirm Check-In Button -->
+        <Button Content="Confirm Check-In" Grid.Row="1" Margin="10" Padding="10" 
+                Background="Teal" Foreground="White" FontWeight="Bold"
+                HorizontalAlignment="Center" VerticalAlignment="Top"
+                Click="CheckInUser_Click" />
     </Grid>
 </Window>
