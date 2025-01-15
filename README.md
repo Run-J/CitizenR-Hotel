@@ -25,8 +25,14 @@ During my summer vacation in 2024, I traveled to Taipei and stayed at the **Citi
 ### 1: R Hotel Web Portal
 
 #### 1.1 Searching for Available Rooms and Booking
-In this example, we will be looking for an executive room with a check-in date of **01/13/2025** and a check-out date of **01/15/2025**, and then book the room using the guest's full name. It also demonstrates that it is not possible to rebook a room that has already been booked. 
-**Note**: The reason why an executive room can only be booked once is because there is only one room in an executive room. The executive room can only be booked once at the same time because the executive room only has one room, while the king size room and double queen size room have three rooms and two rooms respectively.
+
+In this example, we will search for an executive room with a check-in date of **01/13/2025** and a check-out date of **01/15/2025**, and then book the room using the guest's full name. This example also demonstrates input validation while booking, ensuring that a room cannot be rebooked once it has already been booked.
+
+> **Note**:  
+> The executive room can only be booked once at a time because there is only one executive room available.  
+> In contrast, the king-size room and double queen-size room have three and two rooms available, respectively.  
+> In other words, the king-size room can accommodate up to three reservations at the same time, while the double queen-size room can accommodate up to two.
+
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/ff045160-6354-4c19-8717-57ccbdcb1735" alt="RHotelWebDemo">
