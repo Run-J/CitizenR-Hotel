@@ -25,10 +25,11 @@ During my summer vacation in 2024, I traveled to Taipei and stayed at the **Citi
 ### 1: R Hotel Web Portal
 
 #### 1.1 Searching for Available Rooms and Booking
-This example demonstrates how to search for available rooms from **01/13/2025 to 01/15/2025**, select an **executive room type**, and complete the booking by registering the guest's full name.
+In this example, we will be looking for an executive room with a check-in date of **01/13/2025** and a check-out date of **01/15/2025**, and then book the room using the guest's full name. It also demonstrates that it is not possible to rebook a room that has already been booked. 
+**Note**: The reason why an executive room can only be booked once is because there is only one room in an executive room. The executive room can only be booked once at the same time because the executive room only has one room, while the king size room and double queen size room have three rooms and two rooms respectively.
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/686b3f37-c82f-41f0-ae47-4f5ed67d0b2f" alt="RHotelWebDemo">
+  <img src="https://github.com/user-attachments/assets/ff045160-6354-4c19-8717-57ccbdcb1735" alt="RHotelWebDemo">
 </div>
 
 #### 1.2 Viewing the **Booking Table** in the Database After Booking
