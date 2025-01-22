@@ -59,7 +59,7 @@ The `userId` in the **BookingsTable** maps to the corresponding entry in the **G
 The `roomId` in the **BookingsTable** maps to the corresponding room type in the **Room Type Table**. For example, `roomId 3` represents the **executive room type**.
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/1ec0130e-bfbf-4130-8ff5-d5a31fae9d32" alt="RoomTypeTableAfterBook">
+  <img src="https://github.com/user-attachments/assets/47df34e7-fc45-4b20-9640-23a1899a6f2d" alt="RoomTypeTableAfterBook">
 </div>
 
 ##### **c. Rooms Table**
