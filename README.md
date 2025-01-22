@@ -10,12 +10,12 @@ During my summer vacation in 2024, I traveled to Taipei and stayed at the **Citi
 
 ### My Booking Order on Booking Web
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/dbe37280-8562-421e-a448-5c5c2c7556b9" alt="MyBookingOrder">
+  <img src="https://github.com/user-attachments/assets/ebd2404d-6dfa-4bc4-b6cb-a287172399f2" alt="MyBookingOrder">
 </div>
 
 ### The Desktop App for Check-In at CitizenM Hotel Lobby
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/68c24927-b8ab-4e6a-b577-28ec17b483d5" alt="CitizenMDesktopApp">
+  <img src="https://github.com/user-attachments/assets/28ab9f1c-bc54-4ba3-881e-2f43cc7ce812" alt="CitizenMDesktopApp">
 </div>
 
 ---
@@ -42,7 +42,7 @@ In this example, we will search for an executive room with a check-in date of **
 After confirming the booking, the **BookingsTable** in the database reflects the changes. It stores all reservation details, including the guest's name, room type, and booking dates.
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/d618e4af-f92f-416e-bab8-a187a69cf4fa" alt="BookingTableAfterBook">
+  <img src="https://github.com/user-attachments/assets/8d0ebe20-c2c0-42e9-980a-9da502a768b9" alt="BookingTableAfterBook">
 </div>
 
 #### 1.3 Exploring Related Tables in the Database
@@ -52,7 +52,7 @@ The portal’s database maintains a structured relationship between various tabl
 The `userId` in the **BookingsTable** maps to the corresponding entry in the **Guests Table**. For instance, `userId 1` is associated with "Run Ji," which was used during the booking process.
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/b9233127-e15c-4ac9-9f92-597c3accd36a" alt="NameTableAfterBook">
+  <img src="https://github.com/user-attachments/assets/cba693e1-88a6-4b06-82e8-819fb4223555" alt="NameTableAfterBook">
 </div>
 
 ##### **b. Room Type Table**
@@ -66,7 +66,7 @@ The `roomId` in the **BookingsTable** maps to the corresponding room type in the
 The `roomNumber` in the **Rooms Table** links back to the room type in the **Room Type Table**. For example, **Room Number 301** is associated with the executive room type, as shown in the **BookingsTable**.
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/a328e762-87b7-4de7-8780-5787403f2463" alt="RoomsTableAfterBook">
+  <img src="https://github.com/user-attachments/assets/492aca29-7a76-4071-84ca-981931bcd2a2" alt="RoomsTableAfterBook">
 </div>
 
 ---
@@ -77,14 +77,14 @@ The `roomNumber` in the **Rooms Table** links back to the room type in the **Roo
 In this example, we check in a reservation via the desktop app using the guest's last name, "Ji." The app displays reservation details, including the guest's full name, check-in/out dates, assigned room number, and total amount.
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/19b34191-ff34-4867-b11f-495462d28fe1" alt="RHotelWPFDemo">
+  <img src="https://github.com/user-attachments/assets/e2fa8a38-9b1d-4f82-8966-e2578a37db4e" alt="RHotelWPFDemo">
 </div>
 
 #### 2.2 Viewing the **Booking Table** in the Database After Check-In
 Once the guest is checked in, the "Check-in" status in the **BookingsTable** updates from `0` to `1`.
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/309020ac-dd9b-4d27-9a4c-6a7b9d37ef48" alt="BookingsTableAfterCheckIn">
+  <img src="https://github.com/user-attachments/assets/da0a9159-a53f-4fdf-adc3-7f4d7750165a" alt="BookingsTableAfterCheckIn">
 </div>
 
 ---
@@ -104,12 +104,12 @@ Once the guest is checked in, the "Check-in" status in the **BookingsTable** upd
 Implemented stored procedures to ensure efficient and secure database operations using Dapper, a lightweight and fast ORM. The stored procedures handle tasks such as booking management and data retrieval.
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/9fe2a2f0-e34d-46d2-bac1-32617f43382d" alt="StoredProceduresWithDapper">
+  <img src="https://github.com/user-attachments/assets/6e2f03ab-0c41-4e80-82f9-22c551feb5aa" alt="StoredProceduresWithDapper">
 </div>
 
 ### 2. Generic Programming and Dependency Injection (DI)
 Utilized generic programming and dependency injection to create modular, reusable, and testable components. This approach reduces code duplication and enhances maintainability.
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/a714fe5e-2f22-47c3-8635-9f6de7c3eff7" alt="GenericProgrammingAndDI">
+  <img src="https://github.com/user-attachments/assets/7476fdc2-703d-469f-99c7-26977e4844cd" alt="GenericProgrammingAndDI">
 </div>
