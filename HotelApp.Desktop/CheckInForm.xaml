@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HotelApp.Desktop"
         mc:Ignorable="d"
-        Title="CheckInForm" Height="350" Width="500" FontSize="20" FontFamily="Segoe UI" WindowStartupLocation="CenterOwner">
+        Title="R Hotel Check-In" Height="350" Width="500" FontSize="20" FontFamily="Segoe UI" WindowStartupLocation="CenterOwner">
     <Grid>
         <!-- Background image -->
         <Grid.Background>

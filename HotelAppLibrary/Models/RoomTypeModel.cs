@@ -17,5 +17,8 @@ namespace HotelAppLibrary.Models
         public string? Description { get; set; }
         public decimal Price { get; set; }
         public string? ImageUrl { get; set; } // New property for room image URL
+
+
+        public int AvailableRooms { get; set; } // This is NOT stored in the DB, just filled form SQL result
     }
 }

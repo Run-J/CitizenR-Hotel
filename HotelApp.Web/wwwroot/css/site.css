@@ -253,6 +253,13 @@ footer p {
     line-height: 1.5;
 }
 
+.room-availability {
+    margin-top: 8px;
+    color: #d9534f; /* Bootstrap red-like color */
+    font-weight: bold;
+}
+
+
 .no-results-message {
     text-align: center;
     color: #d9534f; /* Red for emphasis */

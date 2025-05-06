@@ -52,6 +52,9 @@
                                    asp-route-startdate="@Model.StartDate.ToShortDateString()"
                                    asp-route-enddate="@Model.EndDate.ToShortDateString()"
                                    class="btn btn-success">Book Now</a>
+                                <p class="room-availability">
+                                    Only <strong>@room.AvailableRooms</strong> left
+                                </p>
                             </td>
                         </tr>
                     }

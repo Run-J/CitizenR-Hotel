@@ -12,7 +12,7 @@ namespace HotelApp.Web.Pages
 
         [DataType(DataType.Date)]
         [BindProperty(SupportsGet = true)]
-        public DateTime StartDate { get; set; } = DateTime.Now; // Default end date is tomorrow
+        public DateTime StartDate { get; set; } = DateTime.Now; // Default start date is today
 
         [DataType(DataType.Date)]
         [BindProperty(SupportsGet = true)]
@@ -22,6 +22,8 @@ namespace HotelApp.Web.Pages
         public bool SearchEnabled { get; set; } = false; // Toggle for search functionality
 
         public List<RoomTypeModel> AvailableRoomTypes { get; set; } = new List<RoomTypeModel>(); // For stores search results
+
+
 
         public RoomSearchModel(IDatabaseData db)
         {

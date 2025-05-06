@@ -23,25 +23,31 @@ end
 
 
 -- Check if the Rooms table is empty
-if not exists (select 1 from dbo.Rooms)
-begin
-    -- Declare variables to store RoomType IDs
-    declare @roomId1 int; -- For 'King Size Bed'
-    declare @roomId2 int; -- For 'Two Queen Size Bed'
-    declare @roomId3 int; -- For 'Executive Suite'
+-- Insert default RoomTypes if none exist
+IF NOT EXISTS (SELECT 1 FROM dbo.RoomTypes)
+BEGIN 
+    INSERT INTO dbo.RoomTypes (Title, Description, Price, ImageUrl)
+    VALUES
+        ('King Size Bed', 'A room with a king-size bed and a window.', 100, '/images/KingSize.jpg'),
+        ('Two Queen Size Bed', 'A room with two queen-size beds and a window.', 115, '/images/TwoQueen.jpg'),
+        ('Executive Suite', 'Two rooms, each with a king-size bed and a window.', 205, '/images/Suite.jpg');
+END
 
-    -- Fetch the RoomType IDs based on Title
-    select @roomId1 = Id from dbo.RoomTypes where Title = 'King Size Bed';
-    select @roomId2 = Id from dbo.RoomTypes where Title = 'Two Queen Size Bed';
-    select @roomId3 = Id from dbo.RoomTypes where Title = 'Executive Suite';
+-- Insert Rooms if table is empty
+IF NOT EXISTS (SELECT 1 FROM dbo.Rooms)
+BEGIN
+    DECLARE @roomId1 INT, @roomId2 INT, @roomId3 INT;
 
-    -- Insert room records into the Rooms table with associated RoomType IDs
-    insert into dbo.Rooms (RoomNumber, RoomTypesId)
-    values 
-        ('101', @roomId1), -- Room 101 with 'King Size Bed'
-        ('102', @roomId1), -- Room 102 with 'King Size Bed'
-        ('103', @roomId1), -- Room 103 with 'King Size Bed'
-        ('201', @roomId2), -- Room 201 with 'Two Queen Size Bed'
-        ('202', @roomId2), -- Room 202 with 'Two Queen Size Bed'
-        ('301', @roomId3); -- Room 301 with 'Executive Suite'
-end
+    SELECT @roomId1 = Id FROM dbo.RoomTypes WHERE Title = 'King Size Bed';
+    SELECT @roomId2 = Id FROM dbo.RoomTypes WHERE Title = 'Two Queen Size Bed';
+    SELECT @roomId3 = Id FROM dbo.RoomTypes WHERE Title = 'Executive Suite';
+
+    INSERT INTO dbo.Rooms (RoomNumber, RoomTypesId)
+    VALUES 
+        ('101', @roomId1),
+        ('102', @roomId1),
+        ('103', @roomId1),
+        ('201', @roomId2),
+        ('202', @roomId2),
+        ('301', @roomId3);
+END
